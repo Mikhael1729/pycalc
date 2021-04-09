@@ -1,5 +1,5 @@
-<p align="center>
-  <img src="./images/presentation.png" width="100%" />
+<p align="center">
+  <img src="./images/presentation.png"/>
 </p>
 
 ## Características
