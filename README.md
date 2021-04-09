@@ -1,4 +1,4 @@
-<div style="width:100%; background-color:#D4E4EE; display:flex; flex-direction: column">
+<div style="width:100%; background-color:#E2F3FE; text-align: center">
   <img src="./images/presentation.png" />
 </div>
 
