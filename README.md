@@ -1,6 +1,6 @@
-<div style="width:100%; background-color:#E2F3FE; text-align: center">
+<p align="center>
   <img src="./images/presentation.png" />
-</div>
+</p>
 
 ## Características
 
