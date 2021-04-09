@@ -1,6 +1,6 @@
-<center>
+<div style="width:100%; background-color:#D4E4EE; display:flex; flex-direction: column">
   <img src="./images/presentation.png" />
-</center>
+</div>
 
 ## Características
 
