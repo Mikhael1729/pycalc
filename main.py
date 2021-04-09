@@ -7,3 +7,6 @@ except Exception as e:
 
 def new_function():
 	pass
+
+def nuevo_cambio():
+	pass
