@@ -1,12 +1,15 @@
-# Python Calculator
+<center>
+  <img src="./images/presentation.png" />
+</center>
 
-A simple Python calculator to compute the follwing mathematical operations:
+## Características
 
-- Addition
-- Subtraction
-- Multiplication
-- Division
-- Derivatives
-- Integrals
+Pycalc puede computar las siguientes operaciones matemáticas:
 
+- Suma
+- Resta
+- Multipliación
+- División
+- Derivadas
+- Integrales
 
