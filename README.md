@@ -33,12 +33,14 @@ virtualenv venv
 Activate the envrionment:
 
 ```
-.\env\Scripts\activate
+.\venv\Scripts\**activate**
 ```
 
 Install the dependencies of the project:
 
-```pip install -r requirements.txt```
+```
+pip install -r requirements.txt
+```
 
 ## Execute the program
 

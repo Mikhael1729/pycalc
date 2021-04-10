@@ -15,15 +15,21 @@ Handles the program execution. There two modes to use the app:
 
 `--file`: to save the calculations in an external file
 """
+
+"""
+```
+sum 4 + 4
+python3 main.py sum 4 4
+python3 main.py rest 4 4
+python3 main.py mult 4 4
+python3 main.py derivative \frac{1}{2}x-3
+python3 main.py integral 4 4 x^2
+```
+"""
 try:
 	expression = sys.argv[1:][0]
-
-	fernando = User("Fernando", "González", "1998-10-24 00:00:00")
-	mikhael = User("Mikhael ", "Santos", "1998-10-24 00:00:00")
-
-	x = Symbol('x')
-	e = 1/cos(x)
-	print(e.series(x, 0, 10))
+	# TODO: Create an instance of calculator to test sum, rest...
+	
 	
 except Exception as e:
 	print("Debe ingresar la expresión como argumento")
