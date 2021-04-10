@@ -13,7 +13,7 @@ Pycalc puede computar las siguientes operaciones matemáticas:
 - Derivadas
 - Integrales
 
-## Uso de git
+## Uso de **git**
 
 ```
 git add main.py
