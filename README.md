@@ -13,7 +13,42 @@ Pycalc puede computar las siguientes operaciones matemáticas:
 - Derivadas
 - Integrales
 
-## Uso de **git**
+## Prerequisites
+
+You need to have installed:
+
+- Python 3
+- pip
+- virtualenv
+
+
+## Install the project
+
+Create a virtual environment:
+
+```
+virtualenv venv
+```
+
+Activate the envrionment:
+
+```
+.\env\Scripts\activate
+```
+
+Install the dependencies of the project:
+
+```pip install -r requirements.txt```
+
+## Execute the program
+
+Having the virtual environment in execution:
+
+```
+python main.py
+```
+
+## How to use git
 
 ```
 git add main.py
