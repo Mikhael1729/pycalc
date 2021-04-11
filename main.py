@@ -26,7 +26,6 @@ try:
 	user_input = Parser.process_cluster(args)
 	operation, expression = user_input[1], user_input[0]
 
-	# Process integral operation.
 	if operation == "integral":
 		parts = expression.split(" ")
 		a = float(parts[0]) # Lower bound of the definite integral
