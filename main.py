@@ -1,46 +1,28 @@
 import sys
-from Calculator import Calculator
-# from sympy import Symbol, cos
 import argparse
-from integral import integrate
+from helpers.parser import Parser
+from helpers.generate_function import generate_function
 
 """
-Is the starting point of the program.
+Calculate polinomials operations and derivatives and integrals of them.
 
-Handles the program execution. There two modes to use the app:
-
-1. Passing only a expression as parameter.
-2. Passing a file with LaTex code to calculate an expression
-
-## Flags
-
-`--file`: to save the calculations in an external file
+To see the options type: `python main.py --help`
 """
-
-"""
-```
-python3 main.py operate 24 + 2x            -- Only accepts expressions with no derivatives or integrals
-python3 main.py derivative \frac{1}{2}x-3
-python3 main.py integral 4 4 x^2
-```
-"""
-
 try:
-  # expression = sys.argv[1:]
+	parser = argparse.ArgumentParser(description="P Y C A L C")
+	parser.add_argument('--file', help='Store the operation in an external file', action='store_true', required=False)
+	
+	subparser = parser.add_subparsers(help="Available operations")
 
-  # parser = argparse.ArgumentParser(description="Pycalc — operations simplified")
-  # subparser = parser.add_subparsers(help="Available options - help")
+	operate = Parser("operate", "o", "Calculate a polynomial or constant function").insert_in(subparser)
+	derivative = Parser("derivative", "d", "Calculate the derivative of a polynomial or constant function").insert_in(subparser)
+	integral = Parser("integral", "i", "Calculate the definite integral of a polynomial or constant function").insert_in(subparser)
 
-  # operate = subparser.add_parser('operate', aliases = ['o'], help = f'Compute a mathematical operation')
-  # derivative = subparser.add_parser('derivative', aliases = ['d'], help = 'Compute the derivative of any expression')
-  # integral = subparser.add_parser('integral', aliases = ['i'], help = 'Compute the definitive integral of any expression')
+	args = parser.parse_args()
 
-  # print(expression)
-  # args = parser.parse_args(['derivative', '--help'])
-  # print(args)
+	expression = Parser.process_cluster(args)
 
-  # print(args.accumulate(args.integers))
-  print(integrate(100, 0, 2))
+	function = generate_function(expression[0], debug=True)
 except Exception as e:
   print(e)
   print("Debe ingresar la expresión como argumento")
