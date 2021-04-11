@@ -35,12 +35,12 @@ try:
 
 		result, steps = integrate(a, b, math_function)
 
-		print(result)
+		print(round(result, 4))
 
 		if args.file != None:
 			result_file = ResultFile(args.file, "Integral Operation", steps, round(result, 4))
-			result_file.save_operation()
-			print("Operation is saved")
+			location = result_file.save_operation()
+			print(f"Calculation is saved. Open the results in {location}")
 
 	elif operation == "derivative":
 		parts = expression.split(" ")

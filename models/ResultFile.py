@@ -27,3 +27,5 @@ class ResultFile:
 			f = open(file_path, "w")
 			f.write(content)
 			f.close()
+
+		return file_path
