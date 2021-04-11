@@ -28,4 +28,8 @@ class ResultFile:
 			f.write(content)
 			f.close()
 
+		print(f"Calculation is saved. Open the results in {file_path}")
+
 		return file_path
+
+

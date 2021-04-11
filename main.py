@@ -38,20 +38,20 @@ try:
 		print(round(result, 4))
 
 		if args.file != None:
-			result_file = ResultFile(args.file, "Integral Operation", steps, round(result, 4))
-			location = result_file.save_operation()
-			print(f"Calculation is saved. Open the results in {location}")
+			ResultFile(args.file, "Integral Operation", steps, round(result, 4)).save_operation()
 
 	elif operation == "derivative":
 		parts = expression.split(" ")
 		a = float(parts[0])
 		math_function = "".join(parts[1:])
 
-		function = generate_function(math_function, debug=True)
+		result, steps = derivate(math_function, a)
 
-		result = derivate(function, a)
+		print(round(result, 4))
 
-		print(result)
+		if args.file != None:
+			ResultFile(args.file, "Derivative Operation", steps, round(result, 4)).save_operation()
+
 	elif operation == "operate":
 		pass
 	else:

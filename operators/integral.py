@@ -1,11 +1,8 @@
 from math import *
 from helpers.generate_function import generate_function
 
-# def f(x):
-  # return ((sin(3*x))**3)/((2*x**5)**(1/3)) #Insert function manually
-
-def integrate(a, b, math_function): #Integration function
-  f = generate_function(math_function)
+def integrate(a, b, math_function):
+  f = generate_function(math_function) # Python generated function from latex expression.
   N = 1000000 # Number of times the sum will be made (1 million)
   value = 0
   result = 0
@@ -20,6 +17,7 @@ def integrate(a, b, math_function): #Integration function
 
   result = ((b - a) / N) * value
 
+  # Compute steps.
   steps = ''
   steps += str(math_function.replace('x', f'({str(round(part, 4))})')) + "\\\\"
   steps += '\\frac{{{0} - {1}}}{{{2}}}\\cdot{{3}}'.format(b, a, N, value) + "\\\\"

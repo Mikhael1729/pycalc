@@ -1,24 +1,23 @@
 from math import *
+from helpers.generate_function import generate_function
 
-# def f(x):
-    # return x**2 #Insert function manually
-
-# def derive(): #Differentiation function
-    # h = 0 #Simulates limit when h approaches 0
-    # a = float(input("Insert value for x:")) #Point in which x=a
-    # numerator = f(a + h) - f(a)
-    # denominator = h
-    # derivative = numerator / denominator
-    # return float("%.3f" % derivative)
-
-def derivate(f, a):
+def derivate(math_function, a):
+	"""
+	derive() only calculates the derivative of a function when x = a.
+	It does not return algebraic expressions.
+	"""
+	f = generate_function(math_function)
 	h = 0.00000000001
 	numerator = f(a + h) - f(a)
 	denominator = h
 	derivative = numerator / denominator
-	return float("%.3f" % derivative)
 
-"""
-derive() only calculates the derivative of a function when x = a.
-It does not return algebraic expressions.
-"""
+	result = float("%.3f" % derivative)
+
+	# Compute steps.
+	delta_f = math_function.replace('x', f'({a} + {h})')
+	value_f = math_function.replace('x', f'({a})')
+	steps = '\\frac{{{0} - {1}}}{{{2}}}'.format(delta_f, value_f, h)
+
+	return result, steps
+
