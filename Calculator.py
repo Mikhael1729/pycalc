@@ -1,14 +1,14 @@
 class Calculator:
-    def __init__(self, expression):
-        self.expression = expression
+    def __init__(self):
         """Processess the expresion to convert into numbers"""
-        # \frac{2}{2} -> 2 + 2 + \derivative{2x};
+        # {\frac{2}2} -> 2 + 2 + \derivative{2x};
+        pass
 
     def sum(self, a, b):
-        return a + b + int(self.expression)
+        return a + b
 
     def subtract(self, a, b):
-        pass
+        return a - b
 
     def derivative(self, expression):
         pass
