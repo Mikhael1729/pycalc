@@ -1,7 +1,7 @@
 import sys
 from Calculator import Calculator
-from Calculator import User
 from sympy import Symbol, cos
+import argparse
 
 """
 Is the starting point of the program.
@@ -18,18 +18,25 @@ Handles the program execution. There two modes to use the app:
 
 """
 ```
-sum 4 + 4
-python3 main.py sum 4 4
-python3 main.py rest 4 4
-python3 main.py mult 4 4
+python3 main.py operate 24 + 2x            -- Only accepts expressions with no derivatives or integrals
 python3 main.py derivative \frac{1}{2}x-3
 python3 main.py integral 4 4 x^2
 ```
 """
 try:
-	expression = sys.argv[1:][0]
-	# TODO: Create an instance of calculator to test sum, rest...
-	
-	
+	expression = sys.argv[1:]
+
+	parser = argparse.ArgumentParser(description="Pycalc — operations simplified")
+	subparser = parser.add_subparsers(help="Available options - help")
+
+	operate = subparser.add_parser('operate', aliases = ['o'], help = f'Compute a mathematical operation')
+	derivative = subparser.add_parser('derivative', aliases = ['d'], help = 'Compute the derivative of any expression')
+	integral = subparser.add_parser('integral', aliases = ['i'], help = 'Compute the definitive integral of any expression')
+
+	print(expression)
+	args = parser.parse_args(['derivative', '--help'])
+	print(args)
+	# print(args.accumulate(args.integers))
 except Exception as e:
+	print(e)
 	print("Debe ingresar la expresión como argumento")
