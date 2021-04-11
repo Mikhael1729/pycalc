@@ -1,11 +1,10 @@
-from sympy import symbols, Eq, solve, sympify
-from sympy.utilities.lambdify import lambdify, implemented_function
-from sympy.abc import x
+from sympy import symbols, sympify
+from helpers.generate_function import to_pydef_str
 
-def operate(): 
-    x, y = symbols ('x y')
-    expression = '4x + 2x'
-    expr_value = sympify(expression).subs(x, x)
-    print(expr_value)
-    
-   
+def operate(latex): 
+  x = symbols ('x')
+  py_lambda_expr = to_pydef_str(latex)
+  expr = py_lambda_expr.split(": ")[1]
+  expr_value = sympify(expr).subs(x, x)
+
+  return expr_value

@@ -12,6 +12,8 @@ def to_pydef_str(expression):
 
 	str_def = algo.pipe(input).result['func']
 
+	return str_def
+
 """
 Converts a LaTex string into a Python function.
 """
