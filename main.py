@@ -3,6 +3,7 @@ import argparse
 from helpers.parser import Parser
 from helpers.generate_function import generate_function
 from operators.integral import integrate
+from operators.derivative import derivate
 
 """
 Calculate polinomials operations and derivatives and integrals of them.
@@ -22,20 +23,35 @@ try:
   
 	args = parser.parse_args()
 
-	expression = Parser.process_c luster(args)
+	user_input = Parser.process_cluster(args)
+	operation, expression = user_input[1], user_input[0]
 
 	# Process integral operation.
-	if expression[1] == "integral":
-		parts = expression[0].split(" ")
-		a = float(parts[0])
-		b = float(parts[1])
-		math_function = parts[2]
+	if operation == "integral":
+		parts = expression.split(" ")
+		a = float(parts[0]) # Lower bound of the definite integral
+		b = float(parts[1]) # Upper bound of the definite integral.
+		math_function = "".parts[2:]
 
 		function = generate_function(math_function)
     
 		result = integrate(a, b, function)
 
 		print(result)
+	elif operation == "derivative":
+		parts = expression.split(" ")
+		a = float(parts[0])
+		math_function = "".join(parts[1:])
+
+		function = generate_function(math_function, debug=True)
+
+		result = derivate(function, a)
+
+		print(result)
+	elif operation == "operate":
+		pass
+	else:
+		pass
 
 except Exception as e:
   print(e)
