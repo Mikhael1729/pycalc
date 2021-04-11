@@ -2,6 +2,7 @@ import sys
 import argparse
 from helpers.parser import Parser
 from helpers.generate_function import generate_function
+from operators.integral import integrate
 
 """
 Calculate polinomials operations and derivatives and integrals of them.
@@ -9,6 +10,7 @@ Calculate polinomials operations and derivatives and integrals of them.
 To see the options type: `python main.py --help`
 """
 try:
+	# Create CLI interface.
 	parser = argparse.ArgumentParser(description="P Y C A L C")
 	parser.add_argument('--file', help='Store the operation in an external file', action='store_true', required=False)
 	
@@ -22,7 +24,19 @@ try:
 
 	expression = Parser.process_cluster(args)
 
-	function = generate_function(expression[0], debug=True)
+	# Process integral operation.
+	if expression[1] == "integral":
+		parts = expression[0].split(" ")
+		a = int(parts[0])
+		b = int(parts[1])
+		math_function = parts[2]
+
+		function = generate_function(math_function, debug=True)
+
+		result = integrate(a, b, function)
+
+		print(result)
+
 except Exception as e:
   print(e)
   print("Debe ingresar la expresión como argumento")
