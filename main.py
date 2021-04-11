@@ -4,6 +4,7 @@ from helpers.parser import Parser
 from helpers.generate_function import generate_function
 from operators.integral import integrate
 from operators.derivative import derivate
+from models.ResultFile import ResultFile
 
 """
 Calculate polinomials operations and derivatives and integrals of them.
@@ -30,13 +31,17 @@ try:
 		parts = expression.split(" ")
 		a = float(parts[0]) # Lower bound of the definite integral
 		b = float(parts[1]) # Upper bound of the definite integral.
-		math_function = "".parts[2:]
+		math_function = "".join(parts[2:])
 
-		function = generate_function(math_function)
-    
-		result = integrate(a, b, function)
+		result, steps = integrate(a, b, math_function)
 
 		print(result)
+
+		if args.file != None:
+			result_file = ResultFile(args.file, "Integral Operation", steps, round(result, 4))
+			result_file.save_operation()
+			print("Operation is saved")
+
 	elif operation == "derivative":
 		parts = expression.split(" ")
 		a = float(parts[0])
