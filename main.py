@@ -38,7 +38,7 @@ try:
 		print(round(result, 4))
 
 		if args.file != None:
-			ResultFile(args.file, "Integral Operation", steps, round(result, 4)).save_operation()
+			ResultFile(args.file, "Integral Operation", steps, round(result, 4)).save_operation(False)
 
 	elif operation == "derivative":
 		parts = expression.split(" ")

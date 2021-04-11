@@ -8,13 +8,13 @@ class ResultFile:
 		self.operation = operation
 		self.result = result
 	
-	def save_operation(self):
+	def save_operation(self, add_latex_symbols=True):
 		date = datetime.today()
 		content = (
 			f'# {self.title}\n\n' +
 			f'> **Date**: {date.day}/{date.month}/{date.year}\n\n' +
-			f'**Steps**:\n\n'
-			f'${self.operation}$\n\n'
+			f'**Steps**:\n\n' +
+			(self.operation if not add_latex_symbols else f'${self.operation}$') + "\n\n" +
 			f'**Result**:\n\n${self.result}$\n'
 		)
 

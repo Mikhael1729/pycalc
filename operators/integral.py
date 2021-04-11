@@ -18,9 +18,11 @@ def integrate(a, b, math_function):
   result = ((b - a) / N) * value
 
   # Compute steps.
+  f_part = math_function.replace('x', f'({round(part, 4)})')
+
   steps = ''
-  steps += str(math_function.replace('x', f'({str(round(part, 4))})')) + "\\\\"
-  steps += '\\frac{{{0} - {1}}}{{{2}}}\\cdot{{3}}'.format(b, a, N, value) + "\\\\"
+  steps += "- Last iteration value: $" + f_part + "\\\\$\n"
+  steps += "- Calculation result: \n" + '    $\\frac{{{0} - {1}}}{{{2}}}\\cdot{{3}}$'.format(b, a, N, value)
 
   return result, steps
 
