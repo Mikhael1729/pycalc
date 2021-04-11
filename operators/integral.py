@@ -13,5 +13,5 @@ def integrate(a, b, f): #Integration function
     Aproximates area under a function using Riemann's sum (Midpoint rule)
     """
     value += f(a + (n - (1 / 2)) * ((b-a) / N))
-    result = ((b - a) / N) * value
-    return result
+  result = ((b - a) / N) * value
+  return result

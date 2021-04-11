@@ -19,20 +19,20 @@ try:
 	operate = Parser("operate", "o", "Calculate a polynomial or constant function").insert_in(subparser)
 	derivative = Parser("derivative", "d", "Calculate the derivative of a polynomial or constant function").insert_in(subparser)
 	integral = Parser("integral", "i", "Calculate the definite integral of a polynomial or constant function").insert_in(subparser)
-
+  
 	args = parser.parse_args()
 
-	expression = Parser.process_cluster(args)
+	expression = Parser.process_c luster(args)
 
 	# Process integral operation.
 	if expression[1] == "integral":
 		parts = expression[0].split(" ")
-		a = int(parts[0])
-		b = int(parts[1])
+		a = float(parts[0])
+		b = float(parts[1])
 		math_function = parts[2]
 
-		function = generate_function(math_function, debug=True)
-
+		function = generate_function(math_function)
+    
 		result = integrate(a, b, function)
 
 		print(result)
