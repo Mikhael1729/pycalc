@@ -78,4 +78,4 @@ try:
     pass
 except Exception as e:
   print(e)
-  print("Debe ingresar la expresión como argumento")
+  print("Error trying to calculate given expression. Remember to use \"\" for compound expressions")
