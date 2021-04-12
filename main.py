@@ -61,11 +61,15 @@ try:
 
     result, steps = numerical_operation(a, math_function)
 
+    print(round(result, 4))
+
     if args.file != None:
       ResultFile(args.file, "Operate Numerically", steps, round(result, 4)).save_operation()
 
   elif operation == "general":
     result, steps = operate_fun(expression, )
+
+    print(result)
 
     if args.file != None:
       ResultFile(args.file, "Operate Operation", steps, result).save_operation(print_steps=False)
