@@ -8,6 +8,7 @@ Pycalc computes the following math expressions:
 
 - Derivatives
 - Integrals
+- Numerical and Algebraic expressions
 
 ## Prerequisites
 
@@ -29,7 +30,7 @@ virtualenv venv
 Activate the envrionment:
 
 ```
-.\venv\Scripts\**activate**
+.\venv\Scripts\activate
 ```
 
 Install the dependencies of the project:
