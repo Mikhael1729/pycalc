@@ -2,16 +2,12 @@
   <img src="./images/presentation.png" width="100%"/>
 </p>
 
-## Características
+## Characteristics
 
-Pycalc puede computar las siguientes operaciones matemáticas:
+Pycalc computes the following math expressions:
 
-- Suma
-- Resta
-- Multipliación
-- División
-- Derivadas
-- Integrales
+- Derivatives
+- Integrals
 
 ## Prerequisites
 
@@ -50,14 +46,8 @@ Having the virtual environment in execution:
 python main.py
 ```
 
-## How to use git
+## Authors:
+Mikhael Santos Fernandez---- ID: 1088621
 
-```
-git add main.py
-git commit -m "Agregar la función de suma"
-git push origin master.....Subir cambios
---------------------------------------------
-git pull origin master..... Descargar cambios
-------------------------------------------------
-git status....... Reporte de estado (verde: Los que se van a subir),(Rojo: Al hacer commit no se va a agregrar)
-```
+Fernando Miguel González---- ID: 1101310
+

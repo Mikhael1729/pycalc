@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 from os import path
 
 class ResultFile:
@@ -12,7 +12,7 @@ class ResultFile:
 		date = datetime.today()
 		content = (
 			f'# {self.title}\n\n' +
-			f'> **Date**: {date.day}/{date.month}/{date.year}\n\n' +
+			f'> **Date**: {date.day}/{date.month}/{date.year}\n\n' + timedelta.strftime('%H:%M:%S') + #ADD HOUR
 			f'**Steps**:\n\n' +
 			(self.operation if not add_latex_symbols else f'${self.operation}$') + "\n\n" +
 			f'**Result**:\n\n${self.result}$\n'

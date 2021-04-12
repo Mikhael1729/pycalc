@@ -54,8 +54,15 @@ try:
       ResultFile(args.file, "Derivative Operation", steps, round(result, 4)).save_operation()
 
   elif operation == "operate":
-    value = operate_fun("\\frac{1}{2}x + \\frac{1}{2}x")
-    print(value)
+    
+    result = operate_fun(expression)
+
+    print(result)
+
+    # if args.file != None:
+    #   ResultFile(args.file, "Operate Operation", steps, round(result, 4)).save_operation()
+    
+    
   else:
     pass
 except Exception as e:

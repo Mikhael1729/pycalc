@@ -3,7 +3,7 @@ from helpers.generate_function import generate_function
 
 def derivate(math_function, a):
 	"""
-	derive() only calculates the derivative of a function when x = a.
+	derivate() only calculates the derivative of a function when x = a.
 	It does not return algebraic expressions.
 	"""
 	f = generate_function(math_function)
