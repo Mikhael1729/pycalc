@@ -67,7 +67,7 @@ try:
       ResultFile(args.file, "Operate Numerically", steps, round(result, 4)).save_operation()
 
   elif operation == "general":
-    result, steps = operate_fun(expression, )
+    result, steps = operate_fun(expression)
 
     print(result)
 
