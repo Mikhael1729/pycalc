@@ -2,14 +2,19 @@
   <img src="./images/presentation.png" width="100%"/>
 </p>
 
+## Documentation
+
+Documentation for the program's user manual is available by typing `--help` at the CLI.
+
 ## Characteristics
 
 Pycalc computes the following math expressions:
 
+- Numerical and Algebraic expressions
 - Derivatives
 - Integrals
-- Numerical and Algebraic expressions
 
+## Getting started
 ## Prerequisites
 
 You need to have installed:
@@ -17,7 +22,6 @@ You need to have installed:
 - Python 3
 - pip
 - virtualenv
-
 
 ## Install the project
 
@@ -39,16 +43,18 @@ Install the dependencies of the project:
 pip install -r requirements.txt
 ```
 
-## Execute the program
+## Usage example
 
 Having the virtual environment in execution:
 
 ```
-python main.py
+python main.py --help
 ```
 
 ## Authors:
-Mikhael Santos Fernandez---- ID: 1088621
 
-Fernando Miguel González---- ID: 1101310
+|Name|ID|
+|-|-|
+|Mikhael Santos Fernandez|1088621|
+|Fernando Miguel González|1101310|
 
