@@ -19,10 +19,10 @@ try:
 
   subparser = parser.add_subparsers(help="Available operations")
 
-  operate = Parser("operate", "o", "Calculate a polynomial or constant function").insert_in(subparser)
-  derivative = Parser("derivative", "d", "Calculate the derivative of a polynomial or constant function").insert_in(subparser)
-  integral = Parser("integral", "i", "Calculate the definite integral of a polynomial or constant function").insert_in(subparser)
-  general = Parser("general", "g", "Calculate the given mathematical expression").insert_in(subparser)
+  operate = Parser("operate", "o", "Calculate a polynomial or constant function", argument_description="Mathematical expression. Format: [value] [expression]. Ej: operate 2 x^2").insert_in(subparser)
+  derivative = Parser("derivative", "d", "Calculate the derivative of a polynomial or constant function", argument_description="Mathematical expression. Format: [value] [expression]. Ej: derivative 2 x^2").insert_in(subparser)
+  integral = Parser("integral", "i", "Calculate the definite integral of a polynomial or constant function", argument_description="Mathematical expression. Format: [bottom] [top] [expression]. Ej: integral 0 2 x^2").insert_in(subparser)
+  general = Parser("general", "g", "Calculate the given mathematical expression", argument_description="Mathematical expression. Format: [expression]. Ej: 2x + x").insert_in(subparser)
 
   args = parser.parse_args()
 
