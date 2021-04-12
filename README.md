@@ -15,7 +15,8 @@ Pycalc computes the following math expressions:
 - Integrals
 
 ## Getting started
-## Prerequisites
+
+### Prerequisites
 
 You need to have installed:
 
@@ -23,7 +24,7 @@ You need to have installed:
 - pip
 - virtualenv
 
-## Install the project
+### Install the project
 
 Create a virtual environment:
 
