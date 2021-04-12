@@ -54,7 +54,7 @@ class Parser:
 		"""
 		new_parser = subparser.add_parser(self.name, aliases=[self.alias], help=self.description)
 		new_parser.add_argument(self.argument_name, nargs='+', help=self.argument_description)
-		new_parser.add_argument("--file", "-f", nargs='?', help="Save the operation and result of the calculation in a file", const='code', type=str)
+		new_parser.add_argument("--file", "-f", nargs='?', help="Save the operation and result of the calculation in a file", const='results', type=str)
 		new_parser.set_defaults(which = self.name)
 		
 		Parser.cluster.append(self)
