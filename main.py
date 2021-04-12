@@ -1,7 +1,7 @@
 import sys
 import argparse
 from helpers.parser import Parser
-from helpers.generate_function import generate_function
+from helpers.generate_function import generate_function, to_pydef_str
 from operators.integral import integrate
 from operators.derivative import derivate
 from operators.operate import operate as operate_fun
@@ -22,6 +22,7 @@ try:
   operate = Parser("operate", "o", "Calculate a polynomial or constant function").insert_in(subparser)
   derivative = Parser("derivative", "d", "Calculate the derivative of a polynomial or constant function").insert_in(subparser)
   integral = Parser("integral", "i", "Calculate the definite integral of a polynomial or constant function").insert_in(subparser)
+  general = Parser("general", "g", "Calculate the given mathematical expression").insert_in(subparser)
 
   args = parser.parse_args()
 
@@ -54,14 +55,24 @@ try:
       ResultFile(args.file, "Derivative Operation", steps, round(result, 4)).save_operation()
 
   elif operation == "operate":
-    
-    result = operate_fun(expression)
+    parts = expression.split(" ")
+    a = float(parts[0])
+    math_function = "".join(parts[1:])
+
+    py_str_def = to_pydef_str(math_function)
+    math_def = eval(py_str_def)
+    result = math_def(a)
 
     print(result)
 
-    # if args.file != None:
-    #   ResultFile(args.file, "Operate Operation", steps, round(result, 4)).save_operation()
-    
+    if args.file != None:
+      ResultFile(args.file, "Operate Operation", steps, round(result, 4)).save_operation()
+
+  elif operation == "general":
+    result, steps = operate_fun(expression, )
+
+    if args.file != None:
+      ResultFile(args.file, "Operate Operation", steps, result).save_operation(print_steps=False)
     
   else:
     pass

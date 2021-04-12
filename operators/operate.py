@@ -6,5 +6,10 @@ def operate(latex_expr):
   py_lambda_expr = to_pydef_str(latex_expr)
   expr = py_lambda_expr.split(": ")[1]
   expr_value = sympify(expr).subs(x, x)
-  
-  return latex(expr_value)
+
+  result = latex(expr_value)
+  steps = ''
+
+  return result, steps
+
+
