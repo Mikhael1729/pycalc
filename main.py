@@ -4,7 +4,7 @@ from helpers.parser import Parser
 from helpers.generate_function import generate_function, to_pydef_str
 from operators.integral import integrate
 from operators.derivative import derivate
-from operators.operate import operate as operate_fun
+from operators.operate import operate as operate_fun, numerical_operation
 from models.ResultFile import ResultFile
 
 """
@@ -59,21 +59,17 @@ try:
     a = float(parts[0])
     math_function = "".join(parts[1:])
 
-    py_str_def = to_pydef_str(math_function)
-    math_def = eval(py_str_def)
-    result = math_def(a)
-
-    print(result)
+    result, steps = numerical_operation(a, math_function)
 
     if args.file != None:
-      ResultFile(args.file, "Operate Operation", steps, round(result, 4)).save_operation()
+      ResultFile(args.file, "Operate Numerically", steps, round(result, 4)).save_operation()
 
   elif operation == "general":
     result, steps = operate_fun(expression, )
 
     if args.file != None:
       ResultFile(args.file, "Operate Operation", steps, result).save_operation(print_steps=False)
-    
+
   else:
     pass
 except Exception as e:

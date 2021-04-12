@@ -8,7 +8,7 @@ class ResultFile:
     self.operation = operation
     self.result = result
 
-  def save_operation(self, add_latex_symbols=True, print_steps=False):
+  def save_operation(self, add_latex_symbols=True, print_steps=True):
     date = datetime.today()
     content = (
       f'# {self.title}\n\n' +

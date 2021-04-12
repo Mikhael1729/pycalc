@@ -12,4 +12,13 @@ def operate(latex_expr):
 
   return result, steps
 
+def numerical_operation(a, latex_expr):
+  py_str_def = to_pydef_str(latex_expr)
+  math_def = eval(py_str_def)
+  result = math_def(a)
+
+  steps = latex_expr.replace('x', f'({a})')
+
+  return result, steps
+
 
