@@ -19,6 +19,7 @@ Converts a LaTex string into a Python function.
 """
 def generate_function(expression: str, debug=False) -> Callable[[int], str]:
 	str_def = to_pydef_str(expression)
+  #str_def = str_def.replace("e",2.7182818284590452353602874713526624977572470936999)
 	if debug:
 		print(str_def)
 
