@@ -40,7 +40,7 @@ try:
     print(round(result, 4))
 
     if args.file != None:
-      ResultFile(args.file, "Integral Operation", steps, round(result, 4)).save_operation(False)
+      ResultFile(args.file, "Integral Operation", steps, round(result, 4)).save_operation(False, latex_expression=math_function)
 
   elif operation == "derivative":
     parts = expression.split(" ")
@@ -52,7 +52,7 @@ try:
     print(round(result, 4))
 
     if args.file != None:
-      ResultFile(args.file, "Derivative Operation", steps, round(result, 4)).save_operation()
+      ResultFile(args.file, "Derivative Operation", steps, round(result, 4)).save_operation(latex_expression=math_function)
 
   elif operation == "operate":
     parts = expression.split(" ")
@@ -64,7 +64,7 @@ try:
     print(round(result, 4))
 
     if args.file != None:
-      ResultFile(args.file, "Operate Numerically", steps, round(result, 4)).save_operation()
+      ResultFile(args.file, "Operate Numerically", steps, round(result, 4)).save_operation(latex_expression=math_function)
 
   elif operation == "general":
     result, steps = operate_fun(expression)
@@ -72,7 +72,7 @@ try:
     print(result)
 
     if args.file != None:
-      ResultFile(args.file, "Operate Operation", steps, result).save_operation(print_steps=False)
+      ResultFile(args.file, "Operate Operation", steps, result).save_operation(print_steps=False, latex_expression=expression)
 
   else:
     pass
