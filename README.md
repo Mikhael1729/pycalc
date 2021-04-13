@@ -51,11 +51,3 @@ Having the virtual environment in execution:
 ```
 python main.py --help
 ```
-
-## Authors:
-
-|Name|ID|
-|-|-|
-|Mikhael Santos Fernandez|1088621|
-|Fernando Miguel González|1101310|
-
